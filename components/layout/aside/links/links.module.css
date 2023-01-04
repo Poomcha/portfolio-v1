@@ -1,51 +1,64 @@
 .links {
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     width: 2rem;
+    height: 15rem;
+    margin: auto;
     background: 
         linear-gradient(
             to right,
             transparent 45%,
-            var(--hlight-elmt-color),
+            green,
             transparent 55%);
     position: fixed;
-    top: 9rem;
+    top: 33%;
 }
 
 .links__cat_ctn {
-    height: 2rem;
+    height: 3rem;
+    width: 2rem;
     display: flex;
-    background-color: var(--primary-bg-color);
+    background-color: inherit;
 }
 
 .links__cat {
-    color: var(--hlight-elmt-color);
+    position: relative;
+    color: black;
     transform: rotate(-30deg);
-    background-color: var(--primary-bg-color);
-    width: 1.5rem;
-    height: 1.2rem;
+    background-color: white;
+    width: 1.75rem;
+    height: 1.5rem;
     margin: auto;
 }
 
 .links__link {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 100%;
-    background-color: var(--primary-bg-color);
-    border: 0.1rem solid var(--hlight-elmt-color);
+    background-color: white;
+    border: 0.15rem solid green;
     display: flex;
-    margin: 0.25rem auto 0.8rem;
     overflow: hidden;
 }
 
 .links__img {
     margin: auto;
-    color: var(--clickable-elmt-color);
+    width: 1.5rem;
     cursor: pointer;
+    color: green;
+}
+
+.links__img--linkedIn {
+    width: 1.1rem;
+}
+
+.links__img--email {
+    width: 1.25rem;
 }
 
 .links__img:hover {
-    color: var(--hlight-elmt-color);
+    color: blue;
 }
 
 .grow {

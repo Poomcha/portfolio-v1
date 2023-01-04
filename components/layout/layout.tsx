@@ -1,16 +1,19 @@
+import LanguageProvider from "../context/language"
 import Aside from "./aside/aside"
 
-interface LayoutP {
+interface LayoutI {
     children: React.ReactNode
 }
 
-export default function Layout ({children}: LayoutP) {
+export default function Layout ({children}: LayoutI) {
     return (
         <>
-            <Aside />
-            <main>
-                {children}
-            </main>
+            <LanguageProvider>
+                <Aside />
+                <main>
+                    {children}
+                </main>                                     
+            </LanguageProvider>
         </>
     )
 }

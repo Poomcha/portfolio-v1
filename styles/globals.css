@@ -19,8 +19,10 @@ body {
 }
 
 body {
-  
+  background-color: white;
 }
+
+main {}
 
 a {
   color: inherit;

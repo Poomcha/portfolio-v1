@@ -1,7 +1,8 @@
 import Links from "./links/links"
+import styles from "./aside.module.css"
 
 export default function Aside() {
-    return <>
-        <Links></Links>
-    </>
+    return <aside className={styles.aside}>
+        <Links />
+    </aside>
 }

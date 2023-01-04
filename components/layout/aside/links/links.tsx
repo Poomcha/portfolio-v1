@@ -1,7 +1,7 @@
 import styles from "./links.module.css"
 
 import { useState, useEffect } from "react"
-import Image from "next/image"
+import cN from "classnames"
 
 interface RandomAnim {
     element: string,
@@ -9,7 +9,7 @@ interface RandomAnim {
 }
 const randomAnim = (): RandomAnim => {
     const animations = ["grow", "rotate", "shakeX", "fallDown"];
-    const elements = ["linkedIn", "email", "discord", "github"];
+    const elements = ["linkedIn", "email", "github"];
     const oneOrChainedAnimation = Math.ceil(Math.random()*10%2)
     const randomElement = elements[Math.floor(Math.random()*elements.length)]
     const randomAnimation = animations[Math.floor(Math.random()*animations.length)]
@@ -26,24 +26,23 @@ const randomAnim = (): RandomAnim => {
     }
 }
 
-const randomTime = (min: number, max: number): number => (Math.ceil(Math.random()*(max-min)+min)*1000)
+const randomTime = (min: number, max: number): number => {
+    const randomTime = Math.ceil(Math.random()*(max-min)+min)*1000
+    // console.log(randomTime);
+    return randomTime;
+}
 
 interface IconP {
     link: string,
     name: string,
     classes: string,
-    src: string,
+    fontAwesome: string,
 }
 
 const Icon = (props: IconP): JSX.Element => (
     <a href={props.link} className={styles.links__link}>
         <span style={{display: 'none'}}>{props.name}</span>
-        <Image 
-            src={props.src}
-            alt={props.name}
-            fill
-            sizes=""
-        />
+        <i className={cN(props.fontAwesome, props.classes.split(' ').map(style => styles[style]))}></i>
     </a>
 )
 
@@ -55,7 +54,7 @@ export default function Links() {
     })
 
     useEffect(() => {
-        const timeoutId = setTimeout(() => setAnimObject(randomAnim()), randomTime(8, 4))
+        const timeoutId = setTimeout(() => setAnimObject(randomAnim()), randomTime(4, 8))
         return () => {
             clearTimeout(timeoutId)
         }
@@ -65,45 +64,29 @@ export default function Links() {
         // Random key here make the whole component re render on each new state
         <section className={styles.links} key={Math.random()}>
             <div className={styles.links__cat_ctn}>
-                <Image
-                    src="/icons/at-solid.svg"
-                    alt="@" 
-                    className={styles.links__cat}
-                    fill
-                />
+                <i className={styles.links__cat + " fa-solid fa-at"}></i>
             </div>
             <Icon
                 link="https://www.linkedin.com/in/benjamin-degen%C3%A8ve-93b991186/"
                 name="linkedin"
-                src="/icons/linkedin-in.svg"
-                classes={`${animObject.element === "linkedIn" ? animObject.animation : ''}`}
+                fontAwesome="fa-brands fa-linkedin-in"
+                classes={`links__img links__img--linkedIn ${animObject.element === "linkedIn" ? animObject.animation : ''}`}
             ></Icon>
             <Icon
-                link="https://www.linkedin.com/in/benjamin-degen%C3%A8ve-93b991186/"
-                name="linkedin"
-                src="/icons/linkedin-in.svg"
-                classes={`${animObject.element === "linkedIn" ? animObject.animation : ''}`}
+                link="mailto:ben.degeneve@gmail.com"
+                name="email"
+                fontAwesome="fa-solid fa-envelope"
+                classes={`links__img links__img--email ${animObject.element === "email" ? animObject.animation : ''}`}
             ></Icon>
             <div className={styles.links__cat_ctn}>
-                <Image
-                    src="/icons/code-solid.svg"
-                    alt="code" 
-                    className={styles.links__cat}
-                    fill
-                />
+                <i className={styles.links__cat + " fa-solid fa-code"}></i>
             </div>
-            {/* <LinkImg
-                name="linkedIn" 
-                link={about.links.linkedIn} 
-                classes={`fa-brands fa-linkedin-in links__img ${animObject.element === "linkedIn" ? animObject.animation : ''}`} />
-            <LinkImg
-                name="email"
-                link={`mailto:${about.links.gmail}`} 
-                classes={`fa-solid fa-envelope links__img ${animObject.element === "email" ? animObject.animation : ''}`} />
-            <LinkImg 
+            <Icon
+                link="https://github.com/Poomcha"
                 name="github"
-                link={about.links.github} 
-                classes={`fa-brands fa-github links__img ${animObject.element === "github" ? animObject.animation : ''}`} /> */}
+                fontAwesome="fa-brands fa-github"
+                classes={`links__img ${animObject.element === "github" ? animObject.animation : ''}`}
+            ></Icon>
         </section>
     )
 }
