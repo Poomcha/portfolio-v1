@@ -1,6 +1,11 @@
 import { useState, createContext } from "react";
 
-const LanguageContext = createContext([{}, () => {}]);
+export interface LanguageContextI {
+    language: string,
+    setLanguage: (language: string) => void
+}
+
+export const LanguageContext = createContext<LanguageContextI | null>(null);
 
 interface LanguageProviderI {
     children: React.ReactNode
@@ -8,11 +13,11 @@ interface LanguageProviderI {
 
 export default function LanguageProvider({children}: LanguageProviderI) {
     const [language, setLanguage] = useState(
-        window.navigator.language.split('-')[0] !== 'fr' ? 'en' : 'fr'
+        globalThis?.window?.navigator.language.split('-')[0] !== 'fr' ? 'en' : 'fr'
     )
-
+    
     return (
-        <LanguageContext.Provider value={[language, setLanguage]}>
+        <LanguageContext.Provider value={{language: language, setLanguage: setLanguage}}>
             {children}
         </LanguageContext.Provider>
     )

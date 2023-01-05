@@ -1,0 +1,67 @@
+.switch {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    border: none;
+    margin: 0 6px 0;
+}
+
+.switch > label[for="fr"] {order: 1;}
+.switch > .switch__toggleCtn {order: 2;}
+.switch > label[for="en"]  {order: 3;}
+
+.switch > label {
+    cursor: pointer;
+    width: 24px;
+    height: 15px;
+    display: block;
+    display: flex;
+}
+
+.switch__flagIcon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: black;
+    box-shadow: 
+        0 0 0.25rem black;
+    margin: auto;
+    transition: transform 166ms ease-out;
+}
+
+.switch__flagIcon:hover {
+    transform: scale3d(110%, 110%, 110%);
+}
+
+.switch > input {
+    display: none;
+}
+
+.switch__toggleCtn {
+    position: relative;
+    width: 24px;
+    height: 15px;
+    border: 2px solid green;
+    box-shadow: 0 0 0.1rem green;
+    border-radius: 1rem;
+    margin: 0 6px;
+}
+
+.switch__slider {
+    width: 7px;
+    height: 7px;
+    border-radius: 100%;
+    background-color: green;
+    box-shadow: 0.1rem -0.05rem inset greenyellow;
+    position: relative;
+    top: 1.9px;
+    transition: 0.3s left 0.05s ease-in-out;
+}
+
+.switch__input_fr:checked ~ .switch__toggleCtn > .switch__slider {
+    left: 1px;
+}
+
+.switch__input_en:checked ~ .switch__toggleCtn > .switch__slider {
+    left: 11px;
+}
