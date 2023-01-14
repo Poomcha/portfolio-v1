@@ -274,7 +274,7 @@ export default function MailForm() {
           {language === 'fr' ? (
             <>
               Merci pour votre message !<br />
-              Vous devriez recevoir une confirmation d'ici peu.
+              Vous devriez recevoir une confirmation d&apos;ici peu.
             </>
           ) : (
             <>
