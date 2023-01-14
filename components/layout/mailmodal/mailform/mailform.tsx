@@ -93,7 +93,15 @@ export default function MailForm() {
         en: '200 characters max!',
       };
     }
-    return errors;
+
+    // Test si il y a une erreur.
+    if (
+      Object.values(errors)
+        .map((values) => !!(values.fr || values.en))
+        .reduce((prev, curr) => prev || curr)
+    ) {
+      return errors;
+    } else return {};
   };
 
   const formik = useFormik({
@@ -108,7 +116,7 @@ export default function MailForm() {
     onSubmit: (values: ValuesI) => {
       axios
         .post('/api/email', { ...values, language: language })
-        .then((res) => console.log(res))
+        .then((res) => {})
         .catch((err) => console.log(err));
     },
   });
