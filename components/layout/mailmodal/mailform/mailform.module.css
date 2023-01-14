@@ -1,5 +1,5 @@
 .mailform {
-  --mailform-width: 100%;
+  --mailform-width: 95%;
   --mailform-height: max-content;
   width: var(--mailform-width);
   max-width: 360px;
