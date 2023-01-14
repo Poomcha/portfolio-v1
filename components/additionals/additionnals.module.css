@@ -1,8 +1,9 @@
 .additionnals {
-    width: 100%;
-    height: calc(100vh - 2.5rem);
-    overflow: hidden;
-    padding: 2.5rem 0;
-    background: no-repeat 0 / cover url("/images/background/bg_bottom_16-9.svg") scroll var(--color-2);
-    border-top: 2px solid black;
+  width: 100%;
+  height: calc(100vh - 2.5rem);
+  overflow: hidden;
+  padding: 2.5rem 0;
+  background: no-repeat 0 / cover url('/images/background/bg_bottom_16-9.svg')
+    scroll var(--color-2);
+  border-top: 2px solid black;
 }

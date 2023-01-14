@@ -1,9 +1,9 @@
 .introduction {
-    width: 100%;
-    height: calc(100vh - 2.5rem);
-    overflow: hidden;
-    padding: 2.5rem 0;
-    background: 
-        no-repeat 0 / cover url("/images/background/bg_top_16-9.svg") scroll var(--color-2);
-    border-bottom: 2px solid black;
+  width: 100%;
+  height: calc(100vh - 2.5rem);
+  overflow: hidden;
+  padding: 2.5rem 0;
+  background: no-repeat 0 / cover url('/images/background/bg_top_16-9.svg')
+    scroll var(--color-2);
+  border-bottom: 2px solid black;
 }

@@ -61,14 +61,6 @@
   font-size: 1rem;
 }
 
-.mailform__input::placeholder {
-  /* color: white; */
-}
-
-.mailform__input--firstname,
-.mailform__input--lastname {
-}
-
 .mailform__input--firstname {
   margin-right: auto;
 }
