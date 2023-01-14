@@ -1,6 +1,7 @@
 .aside {
+    position: fixed;
     display: flex;
     justify-content: center;
     width: 2.5rem;
-    height: 300vh;
+    height: 100vh;
 }

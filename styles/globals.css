@@ -1,15 +1,27 @@
-:root {
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,700;1,400;1,700&display=swap');
 
+:root {
+  --color-1: #000000;
+  --color-2: #333333;
+  --color-3: #4d4d4d;
+  --color-4: #663399;
+  --color-5: #003300;
+  --color-6: #660000;
+  --color-7: #00ffff;
+  --color-8: #ffff00;
+  --color-9: #ff9900;
+  --color-10: #ff0066;
+  --color-11: #ff0099;
 }
 
 @media (prefers-color-scheme: dark) {
-  
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Ubuntu Mono';
 }
 
 html,
@@ -19,14 +31,25 @@ body {
 }
 
 body {
-  background-color: white;
+  background-color: var(--color-1);
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.075rem;
+  font-size: 1rem;
 }
 
-main {}
+main {
+  width: calc(100vw - 2.5rem);
+  margin: 2.5rem 0 0 2.5rem;
+}
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+li {
+  list-style-type: none;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,207 +1,197 @@
 .links {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 2rem;
-    height: 15rem;
-    margin: auto;
-    background: 
-        linear-gradient(
-            to right,
-            transparent 45%,
-            green,
-            transparent 55%);
-    position: fixed;
-    top: 33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 2rem;
+  height: 15rem;
+  margin: auto;
+  background: linear-gradient(
+    to right,
+    transparent 45%,
+    var(--color-10),
+    transparent 55%
+  );
+  position: fixed;
+  top: 33%;
 }
 
 .links__cat_ctn {
-    height: 3rem;
-    width: 2rem;
-    display: flex;
-    background-color: inherit;
+  height: 3rem;
+  width: 2rem;
+  display: flex;
+  background-color: var(--color-1);
 }
 
 .links__cat {
-    position: relative;
-    color: black;
-    transform: rotate(-30deg);
-    background-color: white;
-    width: 1.75rem;
-    height: 1.5rem;
-    margin: auto;
+  position: relative;
+  color: var(--color-10);
+  transform: rotate(-30deg);
+  background-color: inherit;
+  width: 1.75rem;
+  height: 1.5rem;
+  margin: auto;
 }
 
 .links__link {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 100%;
-    background-color: white;
-    border: 0.15rem solid green;
-    display: flex;
-    overflow: hidden;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  background-color: var(--color-1);
+  border: 0.15rem solid var(--color-10);
+  box-shadow: 0 0 0.25rem var(--color-10);
+  display: flex;
+  overflow: hidden;
 }
 
 .links__img {
-    margin: auto;
-    width: 1.5rem;
-    cursor: pointer;
-    color: green;
+  margin: auto;
+  width: 1.5rem;
+  height: 1rem;
+  cursor: pointer;
+  color: white;
+  transition: transform 166ms ease-out;
 }
 
-.links__img--linkedIn {
-    width: 1.1rem;
-}
-
-.links__img--email {
-    width: 1.25rem;
-}
-
-.links__img:hover {
-    color: blue;
+.links__img--github {
+  height: 1.25rem;
 }
 
 .grow {
-    animation: 600ms 2 alternate ease-out grow;
+  animation: 600ms 2 alternate ease-out grow;
 }
 
 @keyframes grow {
-    from {
-        transform: scale(1, 1);
-    }
-    to {
-        transform: scale(2, 2);
-    }
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(2, 2);
+  }
 }
 
 .rotate {
-    animation: 300ms ease-out rotate;
+  animation: 300ms ease-out rotate;
 }
 
 @keyframes rotate {
-    from {
-        transform: rotate(0deg)
-    }
-    to {
-        transform: rotate(360deg)
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .shakeX {
-    animation: 900ms ease-out shakeX;
+  animation: 900ms ease-out shakeX;
 }
 
 @keyframes shakeX {
-    0% {
-        transform: translateX(0px);
-    }
-    10% {
-        transform: translateX(5px);
-    }
-    20% {
-        transform: translateX(-4px);
-    }
-    30% {
-        transform: translateX(5px);
-    }
-    40% {
-        transform: translateX(-5.2px)
-    }
-    50% {
-        transform: translateX(3.5px);
-    }
-    60% {
-        transform: translateX(-3.2px);
-    }
-    70% {
-        transform: translateX(2.5px)
-    }
-    80% {
-        transform: translateX(-2.2px)
-    }
-    90% {
-        transform: translateX(1.2px);
-    }
-    100% {
-        transform: translateX(-0.7px);
-    }
+  0% {
+    transform: translateX(0px);
+  }
+  10% {
+    transform: translateX(5px);
+  }
+  20% {
+    transform: translateX(-4px);
+  }
+  30% {
+    transform: translateX(5px);
+  }
+  40% {
+    transform: translateX(-5.2px);
+  }
+  50% {
+    transform: translateX(3.5px);
+  }
+  60% {
+    transform: translateX(-3.2px);
+  }
+  70% {
+    transform: translateX(2.5px);
+  }
+  80% {
+    transform: translateX(-2.2px);
+  }
+  90% {
+    transform: translateX(1.2px);
+  }
+  100% {
+    transform: translateX(-0.7px);
+  }
 }
 
 .fallDown {
-    animation: 500ms ease-out fallDown;
+  animation: 500ms ease-out fallDown;
 }
 
 @keyframes fallDown {
-    from {
-        transform: translateY(-3rem);
-    }
-    80% {
-        transform: translateY(0.6rem);
-    }
-    90% {
-        transform: translateY(-0.3rem);
-    }
-    to {
-        transform: translateY(0);
-    }
+  from {
+    transform: translateY(-3rem);
+  }
+  80% {
+    transform: translateY(0.6rem);
+  }
+  90% {
+    transform: translateY(-0.3rem);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .grow-rotate {
-    animation: 600ms 2 alternate ease-out grow,
-                200ms 1100ms ease-in rotate;
+  animation: 600ms 2 alternate ease-out grow, 200ms 1100ms ease-in rotate;
 }
 
 .rotate-grow {
-    animation: 300ms ease-out reverse rotate, 
-                600ms 250ms 2 alternate ease-out grow;
+  animation: 300ms ease-out reverse rotate,
+    600ms 250ms 2 alternate ease-out grow;
 }
 
 .grow-shakeX {
-    animation: grow 600ms 2 alternate ease-out, 
-                450ms 1150ms ease-out shakeX;
+  animation: grow 600ms 2 alternate ease-out, 450ms 1150ms ease-out shakeX;
 }
 
 .shakeX-grow {
-    animation: shakeX 900ms ease-out, 
-                grow 600ms 800ms 2 alternate;
+  animation: shakeX 900ms ease-out, grow 600ms 800ms 2 alternate;
 }
 
 .grow-fallDown {
-    animation: grow 600ms 2 alternate ease-out,
-                fallDown 500ms 700ms ease-out;
+  animation: grow 600ms 2 alternate ease-out, fallDown 500ms 700ms ease-out;
 }
 
 .fallDown-grow {
-    animation: fallDown 500ms ease-out,
-                grow 600ms 400ms 2 alternate ease-out;
+  animation: fallDown 500ms ease-out, grow 600ms 400ms 2 alternate ease-out;
 }
 
 .rotate-shakeX {
-    animation: rotate 300ms ease-out, 
-                shakeX 900ms 260ms ease-out;
+  animation: rotate 300ms ease-out, shakeX 900ms 260ms ease-out;
 }
 
 .shakeX-rotate {
-    animation: shakeX 900ms ease-out,
-                rotate 300ms 650ms reverse ease-out;
+  animation: shakeX 900ms ease-out, rotate 300ms 650ms reverse ease-out;
 }
 
 .rotate-fallDown {
-    animation: rotate 300ms ease-out,
-                fallDown 500ms 280ms ease-out;
+  animation: rotate 300ms ease-out, fallDown 500ms 280ms ease-out;
 }
 
 .fallDown-rotate {
-    animation: fallDown 500ms ease-out,
-                rotate 300ms 450ms ease-out;
+  animation: fallDown 500ms ease-out, rotate 300ms 450ms ease-out;
 }
 
 .shakeX-fallDown {
-    animation: shakeX 900ms ease-out,
-                fallDown 500ms 850ms ease-out;
+  animation: shakeX 900ms ease-out, fallDown 500ms 850ms ease-out;
 }
 
 .fallDown-shakeX {
-    animation: fallDown 500ms ease-out,
-                shakeX 900ms 280ms ease-out;
+  animation: fallDown 500ms ease-out, shakeX 900ms 280ms ease-out;
+}
+
+@media (hover: hover) {
+  .links__img:hover {
+    transform: scale3d(115%, 115%, 115%);
+  }
 }

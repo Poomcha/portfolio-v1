@@ -1,0 +1,5 @@
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--color-1);
+}
