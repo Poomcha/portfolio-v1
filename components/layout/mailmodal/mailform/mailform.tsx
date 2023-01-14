@@ -160,8 +160,8 @@ export default function MailForm() {
       autocomplete: 'off',
       required: true,
       placeholder: {
-        fr: '✒️...',
-        en: '✒️...',
+        fr: '...',
+        en: '...',
       } as KeyStringI,
     },
   ];

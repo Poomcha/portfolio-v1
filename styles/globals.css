@@ -36,6 +36,16 @@ body {
   font-weight: 500;
   letter-spacing: 0.075rem;
   font-size: 1rem;
+  scrollbar-color: var(--color-4);
+  scrollbar-width: 0.25rem;
+}
+
+*::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--color-4);
 }
 
 main {
