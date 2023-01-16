@@ -9,7 +9,6 @@ import { PageContext, PageContextI, PagesI } from '../../../context/page';
 export default function Nav() {
   const { language } = useContext(LanguageContext) as LanguageContextI;
   const { setCurrentPage } = useContext(PageContext) as PageContextI<PagesI>;
-
   const handleChangingPage = (targetPage: string) => {
     setCurrentPage((prevState) => ({
       ...prevState,
@@ -67,7 +66,7 @@ export default function Nav() {
           >
             <Link
               to={link.name}
-              smooth={false}
+              smooth={true}
               offset={-2.5 * 16}
               spy={true}
               className={styles.nav__links_ctn__li__link}
