@@ -4,11 +4,19 @@ import { Link } from 'react-scroll';
 import cN from 'classnames';
 import { useContext } from 'react';
 import { LanguageContext, LanguageContextI } from '../../../context/language';
+import { PageContext, PageContextI, PagesI } from '../../../context/page';
 
 export default function Nav() {
   const { language } = useContext(LanguageContext) as LanguageContextI;
+  const { setCurrentPage } = useContext(PageContext) as PageContextI<PagesI>;
 
-  language;
+  const handleChangingPage = (targetPage: string) => {
+    setCurrentPage((prevState) => ({
+      ...prevState,
+      current: prevState.names.indexOf(targetPage),
+    }));
+  };
+
   const links = [
     {
       name: 'introduction',
@@ -37,8 +45,8 @@ export default function Nav() {
     {
       name: 'additionnals',
       description: {
-        fr: '',
-        en: '',
+        fr: undefined,
+        en: undefined,
       },
       icon: 'fa-solid fa-plus',
       dataDesc: {
@@ -59,18 +67,21 @@ export default function Nav() {
           >
             <Link
               to={link.name}
-              smooth={true}
+              smooth={false}
               offset={-2.5 * 16}
               spy={true}
               className={styles.nav__links_ctn__li__link}
               activeClass={styles.nav__links_ctn__li__link_current}
+              onSetActive={handleChangingPage}
             >
               <i
                 className={cN(link.icon, styles.nav__links_ctn__li__link__icon)}
               ></i>
-              <span className={styles.nav__links_ctn__li__link__desc}>
-                {link.description[language as 'fr' | 'en']}
-              </span>
+              {link.description[language as 'fr' | 'en'] && (
+                <span className={styles.nav__links_ctn__li__link__desc}>
+                  {link.description[language as 'fr' | 'en']}
+                </span>
+              )}
             </Link>
           </li>
         ))}

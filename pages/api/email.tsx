@@ -53,8 +53,8 @@ export default async function handler(
         : `Your message:\n\n"""\n${req.body.message}\n"""\n\n has been sent!\n\n${signature.text}`,
     html:
       lang === 'fr'
-        ? `<div><p>Votre message : <cite>${req.body.subject}</cite><blockquote>${req.body.message}</blockquote>a bien été envoyé !</p><p>${signature.html}</p></div>`
-        : `<div><p>Your message: <cite>${req.body.subject}</cite><blockquote>${req.body.message}</blockquote>has been sent!</p><p>${signature.html}</p></div>`,
+        ? `<div><p>Votre message :<br /><></p><cite>${req.body.subject}</cite><blockquote><cite>${req.body.message}</cite></blockquote>a bien été envoyé !</p><p>${signature.html}</p></div>`
+        : `<div><p>Your message:<br /><cite>${req.body.subject}</cite><blockquote><cite>${req.body.message}</cite></blockquote>has been sent!</p><p>${signature.html}</p></div>`,
   };
 
   return transporter

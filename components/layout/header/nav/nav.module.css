@@ -27,7 +27,8 @@
 }
 
 .nav__links_ctn__li__link_current {
-  color: var(--color-10);
+  border-bottom: 2px solid var(--color-10);
+  border-radius: 2.5px;
 }
 
 .nav__links_ctn__li__link__icon {
@@ -35,6 +36,7 @@
   width: 1.5rem;
   height: 1rem;
   cursor: pointer;
+  display: inline-block;
 }
 
 .nav__links_ctn__li__link__desc {
@@ -42,7 +44,7 @@
   margin-left: 0.5rem;
 }
 
-@media screen and (min-width: 560px) {
+@media screen and (min-width: 520px) {
   .nav__links_ctn__li__link__desc {
     display: inline-block;
   }
