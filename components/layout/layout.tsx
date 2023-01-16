@@ -24,7 +24,6 @@ export default function Layout({ children }: LayoutI) {
                 <MailModal />
                 {children}
               </main>
-              <Scrollbar />
             </Box>
           </PageProvider>
         </MailModalProvider>

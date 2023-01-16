@@ -10,7 +10,10 @@ export default function Home() {
       <Head>
         <title>bendegeneve</title>
         <meta name="description" content="Ben Degenève Portfolio" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Script src="https://kit.fontawesome.com/5ebada09cd.js" />
