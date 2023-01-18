@@ -109,6 +109,7 @@ export default function Box({ children }: BoxI) {
   return (
     <div
       className={styles.box}
+      // style={{ width: width, height: height }}
       // onWheel={handleWheel}
       // onTouchStart={getTouchStart}
       // onTouchEnd={handleMobileScroll}
