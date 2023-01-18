@@ -1,13 +1,12 @@
 .mailmodal {
   position: fixed;
-  width: calc(100% - 2.5rem);
+  width: calc(100%);
   height: calc(100vh - 2.5rem);
   background-color: rgb(51, 51, 51, 0.25);
   backdrop-filter: blur(6px);
   display: flex;
-  margin-left: auto;
   border: none;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .mailmodal_hide {

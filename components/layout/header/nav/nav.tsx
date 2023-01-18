@@ -2,13 +2,18 @@ import styles from './nav.module.css';
 
 import { Link } from 'react-scroll';
 import cN from 'classnames';
-import { useContext } from 'react';
+import { MouseEvent, useContext } from 'react';
 import { LanguageContext, LanguageContextI } from '../../../context/language';
 import { PageContext, PageContextI, PagesI } from '../../../context/page';
+import {
+  MailModalContext,
+  MailModalContextI,
+} from '../../../context/mailmodal';
 
 export default function Nav() {
   const { language } = useContext(LanguageContext) as LanguageContextI;
   const { setCurrentPage } = useContext(PageContext) as PageContextI<PagesI>;
+  const { isOpen } = useContext(MailModalContext) as MailModalContextI;
   const handleChangingPage = (targetPage: string) => {
     setCurrentPage((prevState) => ({
       ...prevState,
@@ -65,7 +70,13 @@ export default function Nav() {
             data-descr={link.dataDesc[language as 'fr' | 'en']}
           >
             <Link
-              to={link.name}
+              to={(() => {
+                if (isOpen) {
+                  return '';
+                } else {
+                  return link.name;
+                }
+              })()}
               smooth={true}
               offset={-2.5 * 16}
               spy={true}

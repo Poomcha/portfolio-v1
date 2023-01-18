@@ -2,6 +2,7 @@ import styles from './box.module.css';
 import { TouchEvent, useContext, useState, WheelEvent } from 'react';
 import { PageContext, PageContextI, PagesI } from '../../context/page';
 import { scroller } from 'react-scroll';
+import { MailModalContext, MailModalContextI } from '../../context/mailmodal';
 
 interface BoxI {
   children: React.ReactNode;
@@ -9,6 +10,7 @@ interface BoxI {
 
 export default function Box({ children }: BoxI) {
   const { pages } = useContext(PageContext) as PageContextI<PagesI>;
+  const { isOpen } = useContext(MailModalContext) as MailModalContextI;
 
   // Possibly enable page per page scroll.
   const [lastScrollTimestamp, setLastScrollTimeStamp] = useState<number>(0);
@@ -25,8 +27,12 @@ export default function Box({ children }: BoxI) {
   };
 
   const handleWheel = (e: WheelEvent<HTMLDivElement>) => {
+    // Modal is open.
+    if (isOpen) {
+      return;
+    }
     // Too soon to scroll.
-    if (e.timeStamp - lastScrollTimestamp < 500) {
+    if (e.timeStamp - lastScrollTimestamp < 700) {
       return;
     } else {
       const direction = e.deltaY / Math.abs(e.deltaY);
@@ -55,7 +61,10 @@ export default function Box({ children }: BoxI) {
   };
 
   const handleMobileScroll = (e: TouchEvent<HTMLDivElement>) => {
-    // e.stopPropagation();
+    // Modal is open.
+    if (isOpen) {
+      return;
+    }
     const deltaY =
       Math.abs(e.changedTouches[0].pageY) - Math.abs(touchStartPosY);
     // Prevent from doing shit on screen.
@@ -63,7 +72,7 @@ export default function Box({ children }: BoxI) {
       return;
     }
     // Too soon to scroll.
-    if (e.timeStamp - lastScrollTimestamp < 500) {
+    if (e.timeStamp - lastScrollTimestamp < 700) {
       return;
     } else {
       // Check if user's really sliding.
