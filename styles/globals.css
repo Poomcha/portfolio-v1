@@ -24,9 +24,9 @@
   font-family: 'Ubuntu Mono';
 }
 
-/* html {
+html {
   overflow-y: hidden;
-} */
+}
 
 html,
 body {
@@ -57,7 +57,6 @@ li {
 
 .page {
   width: 100%;
-  /* height: calc(100vh - 2.5rem); */
   overflow: hidden;
   padding: 2.5rem 0;
 }
@@ -67,3 +66,5 @@ li {
     color-scheme: dark;
   }
 }
+
+
