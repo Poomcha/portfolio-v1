@@ -2,7 +2,7 @@ import styles from './nav.module.css';
 
 import { Link } from 'react-scroll';
 import cN from 'classnames';
-import { MouseEvent, useContext } from 'react';
+import { useContext } from 'react';
 import { LanguageContext, LanguageContextI } from '../../../context/language';
 import { PageContext, PageContextI, PagesI } from '../../../context/page';
 import {

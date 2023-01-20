@@ -1,0 +1,37 @@
+.project {
+  position: relative;
+  width: calc(100% / 2);
+  height: auto;
+  cursor: pointer;
+  border: 1.5px solid white;
+}
+
+.project > img {
+}
+
+@media (hover: hover) {
+  .project > img {
+    transition: filter 166ms ease-in-out;
+  }
+  .project:hover > img {
+    filter: grayscale(80%) contrast(40%) opacity(0.6) blur(2px);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .project {
+    width: calc(100% / 3);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .project {
+    width: calc(100% / 4);
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .project {
+    width: calc(100% / 5);
+  }
+}

@@ -12,7 +12,7 @@
     transparent 55%
   );
   position: fixed;
-  top: 33%;
+  top: calc((100% - 15rem) / 2);
 }
 
 .links__cat_ctn {
@@ -173,11 +173,5 @@
 @media (hover: hover) {
   .links__img:hover {
     transform: scale3d(115%, 115%, 115%);
-  }
-}
-
-@media screen and (max-height: 460px) {
-  .links {
-    top: 1.5rem;
   }
 }
