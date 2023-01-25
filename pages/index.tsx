@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Script from 'next/script';
-import Introduction from '../components/intoduction/introduction';
+import Introduction from '../components/introduction/introduction';
 import Showcase from '../components/showcase/showcase';
 import Additionnals from '../components/additionals/additionnals';
 

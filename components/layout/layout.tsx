@@ -23,7 +23,7 @@ export default function Layout({ children }: LayoutI) {
         'page'
       ) as HTMLCollectionOf<HTMLElement>
     ).forEach(
-      (htmlElement) => (htmlElement.style.height = `calc(${height}px - 2rem)`)
+      (htmlElement) => (htmlElement.style.height = `calc(${height}px - 40px)`)
     );
   }, [height]);
 

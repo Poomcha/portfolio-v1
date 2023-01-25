@@ -58,7 +58,7 @@ li {
 .page {
   width: 100%;
   overflow: hidden;
-  padding: 2.5rem 0;
+  margin-bottom: 5px;
 }
 
 @media (prefers-color-scheme: dark) {

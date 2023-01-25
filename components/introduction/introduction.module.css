@@ -1,5 +1,4 @@
 .introduction {
   background: no-repeat 0 / cover url('/images/background/bg_top_16-9.svg')
     scroll var(--color-2);
-  border-bottom: 2px solid black;
 }

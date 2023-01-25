@@ -1,5 +1,4 @@
 .additionnals {
   background: no-repeat 0 / cover url('/images/background/bg_bottom_16-9.svg')
     scroll var(--color-2);
-  border-top: 2px solid black;
 }
