@@ -4,7 +4,6 @@ import Aside from './aside/aside';
 import Box from './box/box';
 import MailModal from './mailmodal/mailmodal';
 import MailModalProvider from '../context/mailmodal';
-import Scrollbar from './scrollbar/scrollbar';
 import PageProvider from '../context/page';
 import { useEffect } from 'react';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
