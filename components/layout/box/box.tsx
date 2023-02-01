@@ -85,6 +85,8 @@ export default function Box({ children }: BoxI) {
           } else {
             const current = pages.current + 1;
             scroll(pages.names[current]);
+            setLastScrollTimeStamp(e.timeStamp);
+            return;
           }
         }
         // Going Up
@@ -95,12 +97,13 @@ export default function Box({ children }: BoxI) {
           } else {
             const current = pages.current - 1;
             scroll(pages.names[current]);
+            setLastScrollTimeStamp(e.timeStamp);
+            return;
           }
         }
       } else {
         return;
       }
-      setLastScrollTimeStamp(e.timeStamp);
     }
   };
 
