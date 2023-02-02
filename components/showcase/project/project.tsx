@@ -45,11 +45,11 @@ export default function Project(props: ProjectPropsI) {
           ))}
         </p>
         <div>
-          <a href={props.repoUrl} target="_blank">
+          <a href={props.repoUrl} target="_blank" rel="noreferrer">
             <i className="fa-brands fa-square-github"></i>github
           </a>
           {props.liveVersion && (
-            <a href={props.ghPagesUrl} target="_blank">
+            <a href={props.ghPagesUrl} target="_blank" rel="noreferrer">
               <i className="fa-solid fa-arrow-up-right-from-square"></i>website
             </a>
           )}
