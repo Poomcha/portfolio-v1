@@ -21,7 +21,7 @@ export default function Box({ children }: BoxI) {
     scroller.scrollTo(to, {
       smooth: true,
       container: 'box',
-      offset: -40,
+      // offset: -40,
       ignoreCancelEvents: true,
     });
   };
