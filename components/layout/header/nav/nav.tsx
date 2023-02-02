@@ -78,7 +78,6 @@ export default function Nav() {
                 }
               })()}
               smooth={true}
-              // offset={1}
               spy={true}
               className={styles.nav__links_ctn__li__link}
               activeClass={styles.nav__links_ctn__li__link_current}
