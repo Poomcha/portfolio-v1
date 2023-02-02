@@ -3,18 +3,18 @@
   width: calc(100% / 2);
   height: auto;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .project > img {
+  transition: filter 166ms ease-in-out;
+}
+.project:hover > img {
+  filter: grayscale(80%) contrast(40%) opacity(0.6) blur(2px);
 }
 
-@media (hover: hover) {
-  .project > img {
-    transition: filter 166ms ease-in-out;
-  }
-  .project:hover > img {
-    filter: grayscale(80%) contrast(40%) opacity(0.6) blur(2px);
-  }
+.project:hover > .project__caption {
+  transform: translate3d(0, -100%, 0);
 }
 
 @media screen and (min-width: 600px) {
@@ -33,4 +33,13 @@
   .project {
     width: calc(100% / 5);
   }
+}
+
+.project__caption {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  cursor: auto;
+  transition: transform 300ms ease-out;
 }

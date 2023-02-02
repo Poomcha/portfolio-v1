@@ -39,7 +39,17 @@ const projects: ProjectsDataI[] = [
       en: '',
     },
     liveVersion: false,
-    tech: ['html', 'css', 'vue', 'sass', 'js', 'mysql', 'sequelize', 'node'],
+    tech: [
+      'html',
+      'css',
+      'vue',
+      'sass',
+      'js',
+      'mysql',
+      'sequelize',
+      'express',
+      'node',
+    ],
   },
   // Calculator App
   {

@@ -18,6 +18,7 @@ export default function Showcase() {
       {projects.map((project, index, array) => (
         <Project
           key={project.shortName}
+          language={language}
           nbOfProjects={array.length}
           name={project.name[language]}
           shortName={project.shortName}
@@ -26,9 +27,9 @@ export default function Showcase() {
           imgMinSrc={project.imgMinSrc}
           imgMinAlt={project.imgMinAlt}
           imgSrc={project.imgSrc}
-          imgAlt={project.imgAlt}
-          shortDescription={project.shortDescription}
-          description={project.description}
+          imgAlt={project.imgAlt[language]}
+          shortDescription={project.shortDescription[language]}
+          description={project.description[language]}
           liveVersion={project.liveVersion}
           tech={project.tech}
         />

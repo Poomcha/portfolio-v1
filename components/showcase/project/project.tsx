@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 interface ProjectPropsI {
   key: string;
+  language: string;
   nbOfProjects: number;
   name: string;
   shortName: string;
@@ -12,9 +13,9 @@ interface ProjectPropsI {
   imgMinSrc: string;
   imgMinAlt: string;
   imgSrc: string;
-  imgAlt: { fr: string; en: string; [key: string]: string };
-  shortDescription: { fr: string; en: string; [key: string]: string };
-  description: { fr: string; en: string; [key: string]: string };
+  imgAlt: string;
+  shortDescription: string;
+  description: string;
   liveVersion: boolean;
   tech: string[];
 }
@@ -34,6 +35,26 @@ export default function Project(props: ProjectPropsI) {
           (min-width: 1800px) calc(100% / 5)
         "
       />
+      <figcaption className={styles.project__caption}>
+        <h2>{props.name}</h2>
+        <p>{props.shortDescription}</p>
+        <h3>Tech:</h3>
+        <p>
+          {props.tech.map((tech) => (
+            <strong>{tech} </strong>
+          ))}
+        </p>
+        <div>
+          <a href={props.repoUrl} target="_blank">
+            <i className="fa-brands fa-square-github"></i>github
+          </a>
+          {props.liveVersion && (
+            <a href={props.ghPagesUrl} target="_blank">
+              <i className="fa-solid fa-arrow-up-right-from-square"></i>website
+            </a>
+          )}
+        </div>
+      </figcaption>
     </figure>
   );
 }
