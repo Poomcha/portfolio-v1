@@ -40,8 +40,8 @@ export default function Project(props: ProjectPropsI) {
         <p>{props.shortDescription}</p>
         <h3>Tech:</h3>
         <p>
-          {props.tech.map((tech) => (
-            <strong>{tech} </strong>
+          {props.tech.map((tech, index) => (
+            <strong key={`${tech}${index}`}>{tech} </strong>
           ))}
         </p>
         <div>
