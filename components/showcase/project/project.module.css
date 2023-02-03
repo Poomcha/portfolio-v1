@@ -7,10 +7,10 @@
 }
 
 .project > img {
-  transition: filter 166ms ease-in-out;
+  transition: filter 166ms 300ms ease-in-out;
 }
 .project:hover > img {
-  filter: grayscale(80%) contrast(40%) opacity(0.6) blur(2px);
+  filter: grayscale(90%) contrast(40%) opacity(0.7) blur(3px);
 }
 
 .project:hover > .project__caption {
@@ -41,5 +41,52 @@
   height: 100%;
   top: 100%;
   cursor: auto;
-  transition: transform 300ms ease-out;
+  transition: transform 300ms 100ms ease-out;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0 0.4rem;
+  scrollbar-width: 0.2rem;
+  scrollbar-color: var(--color-10);
+}
+
+.project__caption::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+.project__caption::-webkit-scrollbar-thumb {
+  background-color: var(--color-10);
+  border-radius: 5px;
+}
+
+.project__caption > p {
+  margin-bottom: 0.4rem;
+}
+
+.project__caption > div {
+  margin-top: auto;
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project__caption__links > a {
+  width: fit-content;
+  border: 2px solid var(--color-10);
+  border-radius: 5px;
+  margin: 0 0.4rem 0.4rem 0;
+  padding: 0.4rem;
+  display: flex;
+}
+
+.project__caption__links__icon {
+  width: 1.5rem;
+  height: 1.25rem;
+  margin: auto;
+}
+
+.project__caption__links > a > span {
+  display: none;
+  margin-left: 0.4rem;
 }

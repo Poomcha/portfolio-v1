@@ -31,8 +31,8 @@ const projects: ProjectsDataI[] = [
       en: 'Groupomania App website screenshot.',
     },
     shortDescription: {
-      fr: "Réseau social d'entreprise, développé avec Vue.js et Node.js.",
-      en: 'Company social network, developed with Vue.js and Node.js.',
+      fr: "Réseau social d'entreprise.",
+      en: 'Company social network.',
     },
     description: {
       fr: '',
@@ -68,8 +68,8 @@ const projects: ProjectsDataI[] = [
       en: 'Calculator App website screenshot.',
     },
     shortDescription: {
-      fr: 'Une calculatrice développé avec Vue.js.',
-      en: 'A calculator developed with Vue.js.',
+      fr: 'Calculatrice avec changement de thèmes.',
+      en: 'A calculator with switchable themes.',
     },
     description: {
       fr: '',
@@ -95,8 +95,8 @@ const projects: ProjectsDataI[] = [
       en: 'Piiquante website screenshot.',
     },
     shortDescription: {
-      fr: "Backend d'une application de notation de sauce épicé.",
-      en: 'Backend of a spicy sauce notation application.',
+      fr: "Backend d'une application de notation de sauce.",
+      en: 'Backend of a sauce notation application.',
     },
     description: {
       fr: '',
@@ -176,8 +176,8 @@ const projects: ProjectsDataI[] = [
       en: 'Ohmyfood website screenshot.',
     },
     shortDescription: {
-      fr: 'Application de réservation de plats, intégré en HTML et SCSS.',
-      en: 'Foodtech application, implemented with HTML and SCSS.',
+      fr: "Frontend d'application de réservation de plats.",
+      en: 'Frontend of a foodtech application.',
     },
     description: {
       fr: '',
@@ -205,8 +205,8 @@ const projects: ProjectsDataI[] = [
       en: 'Interactive rating component screenshot.',
     },
     shortDescription: {
-      fr: 'Un composant de notation sympa, intégré avec Vue.js.',
-      en: 'A nice rating component, implemented with Vue.js.',
+      fr: 'Un composant de notation sympa.',
+      en: 'A nice rating component.',
     },
     description: {
       fr: '',
@@ -232,8 +232,8 @@ const projects: ProjectsDataI[] = [
       en: 'Reservia website screenshot.',
     },
     shortDescription: {
-      fr: "Intégration d'une maquette de site de voyage en HTML and CSS.",
-      en: 'A static trip reservation website with HTML and CSS.',
+      fr: "Intégration d'une maquette de site de voyage.",
+      en: 'A static trip reservation website.',
     },
     description: {
       fr: '',

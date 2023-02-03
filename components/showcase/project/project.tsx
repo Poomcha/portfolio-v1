@@ -1,6 +1,8 @@
 import styles from './project.module.css';
 
 import Image from 'next/image';
+import { WheelEvent, TouchEvent } from 'react';
+import cN from 'classnames';
 
 interface ProjectPropsI {
   key: string;
@@ -21,6 +23,12 @@ interface ProjectPropsI {
 }
 
 export default function Project(props: ProjectPropsI) {
+  // Stop events propagation, so we can scroll in captions.
+  const stopWheelingPropagation = (e: WheelEvent<HTMLElement>): void =>
+    e.stopPropagation();
+  const stopTouchEndPropagation = (e: TouchEvent<HTMLElement>): void =>
+    e.stopPropagation();
+
   return (
     <figure className={styles.project}>
       <Image
@@ -35,22 +43,42 @@ export default function Project(props: ProjectPropsI) {
           (min-width: 1800px) calc(100% / 5)
         "
       />
-      <figcaption className={styles.project__caption}>
+      <figcaption
+        className={styles.project__caption}
+        onWheel={stopWheelingPropagation}
+        onTouchEnd={stopTouchEndPropagation}
+      >
         <h2>{props.name}</h2>
         <p>{props.shortDescription}</p>
-        <h3>Tech:</h3>
+        <h3>{props.language === 'fr' ? 'tech' : 'stack'}</h3>
         <p>
           {props.tech.map((tech, index) => (
             <strong key={`${tech}${index}`}>{tech} </strong>
           ))}
         </p>
-        <div>
+        <div className={styles.project__caption__links}>
           <a href={props.repoUrl} target="_blank" rel="noreferrer">
-            <i className="fa-brands fa-square-github"></i>github
+            <i
+              className={cN(
+                'fa-brands fa-github',
+                styles.project__caption__links__icon
+              )}
+            ></i>
+            <span>
+              {props.language === 'fr'
+                ? 'répertoire github'
+                : 'github repository'}
+            </span>
           </a>
           {props.liveVersion && (
             <a href={props.ghPagesUrl} target="_blank" rel="noreferrer">
-              <i className="fa-solid fa-arrow-up-right-from-square"></i>website
+              <i
+                className={cN(
+                  'fa-solid fa-arrow-up-right-from-square',
+                  styles.project__caption__links__icon
+                )}
+              ></i>
+              <span>website</span>
             </a>
           )}
         </div>

@@ -45,8 +45,7 @@ body {
 
 main {
   width: calc(100vw - 2.5rem);
-  /* margin: 40px 0 0 40px; */
-  margin-left: 40px;
+  margin-left: 2.5rem;
 }
 
 a {
@@ -68,4 +67,17 @@ li {
   html {
     color-scheme: dark;
   }
+}
+
+h2 {
+  font-size: 1.2rem;
+  text-decoration: underline;
+  margin: 0.8rem 0;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1rem;
+  text-decoration: underline;
+  margin: 0.4rem 0;
 }
