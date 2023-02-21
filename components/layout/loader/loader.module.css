@@ -1,0 +1,135 @@
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.loaderhide {
+  display: none;
+}
+
+.loader__top,
+.loader__bot {
+  position: relative;
+  height: 50%;
+  overflow: hidden;
+  text-shadow: 0 0 2.5px white, 0 0 10px var(--color-10),
+    0 0 60px var(--color-1);
+}
+.loader__top:after {
+  content: attr(data-descr);
+  font-size: 10vw;
+  height: 20vw;
+  position: absolute;
+  top: calc(100% - 6vw);
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  animation: glitch-left 2s 200ms infinite, gresille 66ms infinite;
+}
+.loader__bot:before {
+  content: attr(data-descr);
+  font-size: 10vw;
+  height: 20vw;
+  position: absolute;
+  bottom: calc(100% - 14vw);
+  left: 50%;
+  transform: translate3d(-50%, 0, 0);
+  animation: glitch-right 2s infinite, gresille 100ms infinite;
+}
+
+
+@keyframes glitch-right {
+  90% {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  91% {
+    transform: scale3d(150%, 150%, 150%), translate3d(-51%, 0, 0);
+  }
+
+  92% {
+    transform: translate3d(-50.5%, 0, 0);
+  }
+
+  93% {
+    transform: translate3d(-51%, 0, 0);
+  }
+
+  94% {
+    transform: translate3d(-48%, 0, 0);
+  }
+
+  95% {
+    transform: translate3d(-40%, 0, 0);
+  }
+
+  96% {
+    transform: translate3d(75%, 0, 0);
+  }
+
+  97% {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  98% {
+    transform: translate3d(0, 0, 0), scale3d(200%, 200%, 200%);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0), scale3d(100%, 100%, 100%);
+  }
+}
+
+@keyframes glitch-left {
+  90% {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  91% {
+    transform: translate3d(-49%, 0, 0), scale3d(150%, 150%, 150%);
+  }
+
+  92% {
+    transform: translate3d(-49.5%, 0, 0);
+  }
+
+  93% {
+    transform: translate3d(-49%, 0, 0);
+  }
+
+  94% {
+    transform: translate3d(-52%, 0, 0);
+  }
+
+  95% {
+    transform: translate3d(-60%, 0, 0);
+  }
+
+  96% {
+    transform: translate3d(-125%, 0, 0);
+  }
+
+  97% {
+    transform: translate3d(-200%, 0, 0);
+  }
+
+  98% {
+    transform: translate3d(0, 0, 0), scale3d(200%, 200%, 200%);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0), scale3d(100%, 100%, 100%);
+  }
+}
+
+@keyframes gresille {
+  25% {
+    transform: translate3d(-50.25%, 0, 0);
+  }
+  75% {
+    transform: translate3d(-49.75%, 0, 0);
+  }
+}

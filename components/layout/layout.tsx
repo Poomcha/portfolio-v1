@@ -7,6 +7,7 @@ import MailModalProvider from '../context/mailmodal';
 import PageProvider from '../context/page';
 import { useEffect } from 'react';
 import useWindowDimensions from '../../hooks/useWindowDimensions';
+import Loader from './loader/loader';
 
 interface LayoutI {
   children: React.ReactNode;
@@ -21,9 +22,7 @@ export default function Layout({ children }: LayoutI) {
       window.document.getElementsByClassName(
         'page'
       ) as HTMLCollectionOf<HTMLElement>
-    ).forEach(
-      (htmlElement) => (htmlElement.style.height = `${height}px`)
-    );
+    ).forEach((htmlElement) => (htmlElement.style.height = `${height}px`));
   }, [height]);
 
   return (
@@ -31,6 +30,7 @@ export default function Layout({ children }: LayoutI) {
       <LanguageProvider>
         <MailModalProvider>
           <PageProvider>
+            <Loader />
             <Box>
               <Header />
               <Aside />
